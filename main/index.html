@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css"/>
+    <title>30 Days of Vue</title>   
+</head>
+<body>
+        <div id="app">
+            <h2>{{ greeting }}</h2>
+            <p>{{alertMessage}}</p>
+            <p v-if="city === 'Toronto'">by {{ user }} who lives in {{ city }}</p>
+            <p v-if="city === 'Lagos'">by {{ user }} who wishes to visit {{ city }}</p>
+            <button v-on:click="changeCity">Change City</button>
+            <button v-on:click="changeGreeting">Change Greeting</button>
+            <button v-on:dblclick="changeGreeting">Double Click to Change Greeting</button>
+            <input v-on:keyup="alertMessageGreeting" placeholder="Type something"/>
+            <input v-on:keyup.enter="alertEnterGreeting" placeholder="Type and release enter"/>
+            <div> 
+                <br>
+                <img v-bind:src="cityImage" />
+            </div>
+            <br>
+            <div>
+                <ul>
+                    <li v-for="number in numbers" :key="number.id">
+                            <p>{{ number.value }}</p>
+                            <input placeholder="type something..."/>
+                    </li>
+                    <button @click="shuffle">Shuffle!!</button>
+                </ul>
+            </div>
+            <br>
+            <div>
+                <header>
+                    <span>Original:</span>
+                    {{message}}
+                </header>
+                <header>
+                    <span>Reversed with method:</span>
+                    {{reverseString(message)}}
+                </header>
+                <header>
+                    <span>Reversed with compute:</span>
+                    {{ reverseMessage }}
+                </header>
+            </div>
+            <br>
+            <div>
+                <label>M</label>
+                <input type="number" v-model="m" placeholder="Type a length in M!">
+                <label>KM</label>
+                <input type="number" v-model="km" placeholder="Type a length in KM!">
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

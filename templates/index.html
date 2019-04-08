@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css"/>
+    <title>30 Days of Vue</title>   
+</head>
+    <body>
+        <div id="app">
+            <single-line-template :message="message"></single-line-template>
+            <inline-temp :message="message">
+                <div class="card">
+                    <header class="card-header card-header-title">
+                        {{message}}
+                    </header>
+                </div>
+            </inline-temp>
+            <x-temp :message="message"></x-temp>
+            <script type="text/x-template" id="x-template-component">
+                <div class="card">
+                    <header class="card-header card-header-title">
+                        {{message}}
+                    </header>
+                </div>
+            </script>
+            <render-component :message="message"></render-component>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

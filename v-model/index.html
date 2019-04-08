@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <label>Name</label>
+            <input type="text" v-model="name" placeholder="Text Input" />
+        </div>
+        <div>
+            <label>Subject</label>
+            <div>
+                <select v-model="subject">
+                        <option disabledvalue="">Select dropdown</option>
+                        <option>Engineering</option>
+                        <option>Computer Science</option>
+                        <option>Biology</option>
+                        <option>Other...</option> 
+                </select>
+            </div>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" v-model="termsAndConditions" /> I agree to the terms and conditions
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" v-model="yesOrNo" value="Yes"/>Yes
+            </label>
+            <label>
+                <input type="radio" v-model="yesOrNo" value="No"/>No
+            </label>
+        </div>
+        <div>
+            <button @click="submit">Submit</button>
+        </div>
+    </div>
+    
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script src="./main.js"></script>
+</html>
